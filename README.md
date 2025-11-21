@@ -1,8 +1,8 @@
-## Air Quality Analysis & Prediction Using Random Forest
+# Air Quality Analysis & Prediction Using Random Forest
 
 This project analyzes air pollution data collected from an Italian city between March 2004 – February 2005. It includes full data cleaning, exploratory analysis, feature engineering, and a Random Forest regression model to predict pollutant levels.
 
-# Project Goals
+### Project Goals
 
 Clean and preprocess raw sensor data
 Handle missing values and negative sensor readings
@@ -12,7 +12,7 @@ Analyze correlations between pollutants
 Build a Random Forest regression model
 Assess the impact of adding season as a feature
 
- # Dataset
+ ### Dataset
 
 Source: Kaggle (Air Quality Dataset)
 Timeframe: March 2004 – February 2005
@@ -21,7 +21,7 @@ Sensors: 5 chemical oxide sensors
 Pollutants: CO, NOx, Benzene, NMHC, NO2
 Environmental: Temperature, Humidity, Absolute Humidity
 
-# Data Cleaning Steps
+### Data Cleaning Steps
 
 Dropped empty columns
 Converted comma numbers (“2,6”) into float values
@@ -33,7 +33,7 @@ Removed negative readings
 Applied IQR outlier filtering
 Removed remaining rows with missing data
 
-# Exploratory Data Analysis (EDA)
+### Exploratory Data Analysis (EDA)
 
 Time-series plots of pollutants
 Normalized and smoothed pollutant signals
@@ -41,7 +41,7 @@ Monthly boxplots showing seasonal patterns
 Correlation heatmap
 Pairplots for multivariate patterns
 
-# Key findings:
+## Key findings:
 
 Benzene peaks in colder months
 Lowest pollutant period: August
@@ -65,7 +65,7 @@ R² improved to 0.93
 ➡️ Seasonality improves prediction accuracy
 
 
-# Technologies Used
+## Technologies Used
 
 - Python  
 - Pandas  
