@@ -63,3 +63,15 @@ One-hot encoding applied
 R² improved to 0.93
 
 ➡️ Seasonality improves prediction accuracy
+
+
+##  Technologies Used
+
+- Python  
+- Pandas  
+- NumPy  
+- Matplotlib  
+- Seaborn  
+- Scikit-learn  
+- Jupyter Notebook  
+
