@@ -1,72 +1,30 @@
 # Air Quality Analysis & Prediction Using Random Forest
 
-This project analyzes air pollution data collected from an Italian city between March 2004 – February 2005. It includes full data cleaning, exploratory analysis, feature engineering, and a Random Forest regression model to predict pollutant levels.
+This project analyzes air pollution data collected from an Italian city between March 2004 and February 2005. The goal is to clean the dataset, explore pollutant trends, build a Random Forest model, and evaluate how adding "season" improves prediction accuracy.
 
-### Project Goals
+---
 
-Clean and preprocess raw sensor data
-Handle missing values and negative sensor readings
-Detect and remove outliers
-Explore pollutant trends over time
-Analyze correlations between pollutants
-Build a Random Forest regression model
-Assess the impact of adding season as a feature
+## 📌 Project Objectives
+- Clean and preprocess raw air quality sensor data
+- Handle missing and negative values
+- Detect & remove outliers (IQR method)
+- Explore time-based pollutant behavior
+- Analyze correlations between environmental variables
+- Build & evaluate a Random Forest regression model
+- Compare models with and without seasonality
 
- ### Dataset
+---
 
-Source: Kaggle (Air Quality Dataset)
-Timeframe: March 2004 – February 2005
-Frequency: Hourly
-Sensors: 5 chemical oxide sensors
-Pollutants: CO, NOx, Benzene, NMHC, NO2
-Environmental: Temperature, Humidity, Absolute Humidity
+## 📊 Dataset
+- **Source:** Kaggle — Air Quality Dataset  
+- **Timeframe:** Mar 2004 – Feb 2005 (Hourly)  
+- **Pollutants:** CO, Benzene (C6H6), NOx, NO2  
+- **Sensors:** 5 metal-oxide sensors  
+- **Environmental Features:** Temperature, RH, Absolute Humidity  
 
-### Data Cleaning Steps
+---
 
-Dropped empty columns
-Converted comma numbers (“2,6”) into float values
-Converted all object numerical columns to float
-Combined Date + Time into a single datetime column
-Removed extremely missing sensors (NMHC > 90%)
-Interpolated missing CO values
-Removed negative readings
-Applied IQR outlier filtering
-Removed remaining rows with missing data
-
-### Exploratory Data Analysis (EDA)
-
-Time-series plots of pollutants
-Normalized and smoothed pollutant signals
-Monthly boxplots showing seasonal patterns
-Correlation heatmap
-Pairplots for multivariate patterns
-
-## Key findings:
-
-Benzene peaks in colder months
-Lowest pollutant period: August
-Highest pollutant period: October
-Strong multicollinearity between C6H6(GT) and NMHC
-
-Machine Learning Model
-Model: RandomForestRegressor
-Target Variable: PT08.S1(CO)
-Two models were trained:
-
-Model 1 — Without Seasons
-Train/test split: 80/20
-R² = 0.92
-
-Model 2 — With Season Category
-Added: spring, summer, autumn, winter
-One-hot encoding applied
-R² improved to 0.93
-
-➡️ Seasonality improves prediction accuracy
-
-
-## Technologies Used
-
+## 🛠️ Technologies Used
 - Python  
 - Pandas  
 - NumPy  
@@ -74,4 +32,51 @@ R² improved to 0.93
 - Seaborn  
 - Scikit-learn  
 - Jupyter Notebook  
+
+---
+
+## 🧹 Data Cleaning
+- Converted comma values (“2,6”) → floats  
+- Combined Date + Time  
+- Removed >90% missing column (NMHC)  
+- Interpolated CO values  
+- Replaced negative sensor readings with NaN  
+- Removed outliers (IQR, scale = 2)  
+- Filtered incomplete rows  
+
+---
+
+## 🔎 Exploratory Data Analysis (EDA)
+- Monthly pollutant variation  
+- Smoothed normalized pollutant curves  
+- Correlation heatmap  
+- Pairwise relationships  
+- Seasonal patterns  
+
+**Findings**
+- Pollution highest in colder months  
+- October = peak benzene  
+- August = lowest benzene  
+- Strong correlation between C6H6 and NMHC  
+
+---
+
+## 🤖 Machine Learning Model
+
+### **Model:** RandomForestRegressor  
+### **Target:** PT08.S1(CO)
+
+Two models were compared:
+
+| Model | Features | R² Score |
+|-------|----------|----------|
+| Without Seasons | Numerical only | **0.92** |
+| With Seasons | Numerical + One-Hot Season | **0.93** |
+
+➡ Seasonality improved performance slightly.
+
+---
+
+## 📈 Example Visualizations
+(Add your plot images here)
 
