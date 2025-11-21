@@ -74,9 +74,3 @@ Two models were compared:
 | With Seasons | Numerical + One-Hot Season | **0.93** |
 
 ➡ Seasonality improved performance slightly.
-
----
-
-## 📈 Example Visualizations
-(Add your plot images here)
-
